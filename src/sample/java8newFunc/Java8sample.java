@@ -78,10 +78,7 @@ public class Java8sample {
          */
 
         // Listのループ処理（ListにforEachがJava8で追加された）
-        List<String> list = new ArrayList<>();
-        list.add("aaa");
-        list.add("ccc");
-        list.add("bbb");
+        List<String> list = List.of("aaa", "bbb", "ccc");
 
         /* Listループの比較 */
         System.out.println("Listループの比較");
@@ -125,7 +122,7 @@ public class Java8sample {
     public static void stream() {
 //        Integer[] a = {1,2,4,5,3,7};
 //        Integer[] b = new Integer[]{1,2,4,5,3,7};
-        List<Integer> list = Arrays.asList(new Integer[]{1, 2, 4, 5, 3, 7});
+        List<Integer> list = List.of(1, 2, 4, 5, 3, 7);
         System.out.println("Listの中身を3以上の値のみ出力(filter)");
         list.stream().filter((i) -> i >= 3).forEach(System.out::println);
 
@@ -136,14 +133,14 @@ public class Java8sample {
         list.stream().map(x -> x * 10).forEach(System.out::println);
 
         System.out.println("a1かb1の値のみ出力(filter)");
-        List<String> strList = new ArrayList<>(Arrays.asList("a1", "a2", "b1", "b2", "c1", "c2", "a3" ));
+        List<String> strList = List.of("a1", "a2", "b1", "b2", "c1", "c2", "a3" );
         strList.stream().filter((s) -> s.matches("[a-b]1")).forEach(System.out::println);
     }
 
     // MapとListの変換
     public static void convertMapAndList() {
 
-        List<Integer> list = Arrays.asList(new Integer[]{1, 2, 4, 5, 3, 7});
+        List<Integer> list = List.of(1, 2, 4, 5, 3, 7);
         System.out.println(list);
 
         System.out.println("ListからMapへ変換");
@@ -151,7 +148,7 @@ public class Java8sample {
         System.out.println(map.toString());
 
         System.out.println("Mapのグルーピング処理");
-        List<String> strList = new ArrayList<>(Arrays.asList("a1", "a2", "b1", "b2", "c1", "c2", "a3" ));
+        List<String> strList = List.of("a1", "a2", "b1", "b2", "c1", "c2", "a3" );
         Map<Integer, List<String>> iMap = strList.stream().collect(
             Collectors.groupingBy(s -> {
                     return Character.getNumericValue(s.charAt(1)) + 10;  // これがMapのKeyになる
