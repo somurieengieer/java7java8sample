@@ -8,25 +8,25 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /* Java7 */
-        System.out.println("----Java7sample.tryWithResources----");
-        Java7sample.tryWithResources();
+        callJava7Func();
+        callJava8Func();
+        callThreadFunc();
+        callLambdaFunc();
+    }
 
-        System.out.println("\n----Java7sample.omitDiamondOperator----");
-        Java7sample.omitDiamondOperator();
+    private static void callLambdaFunc() {
+        /* Lambda */
+        System.out.println("\n----LambdaSample.functionalInterface----");
+        LambdaSample.functionalInterface();;
+    }
 
-        System.out.println("\n----Java7sample.catchSomeException----");
-        Java7sample.catchSomeException();
+    private static void callThreadFunc() {
+        /* Thread */
+        System.out.println("\n----SubThreadExtendsThread.extendsThreadSample----");
+        ThreadSample.extendsThreadSample();
+    }
 
-        System.out.println("\n----Java7sample.detectReflectionError----");
-        Java7sample.detectReflectionError();
-
-        System.out.println("\n----Java7sample.stringSwitchStatement----");
-        Java7sample.stringSwitchStatement();
-
-        System.out.println("\n----Java7sample.underscoreNumber----");
-        Java7sample.underscoreNumber();
-
+    private static void callJava8Func() {
         /* Java8 */
         System.out.println("\n----Java8sample.fileReader----");
         Java8sample.fileReader();
@@ -48,13 +48,26 @@ public class Main {
 
         System.out.println("\n----Java8sample.datetimeFunction----");
         Java8sample.datetimeFunction();
+    }
 
-        /* Thread */
-        System.out.println("\n----SubThreadExtendsThread.extendsThreadSample----");
-        ThreadSample.extendsThreadSample();
+    private static void callJava7Func() {
+        /* Java7 */
+        System.out.println("----Java7sample.tryWithResources----");
+        Java7sample.tryWithResources();
 
-        /* Lambda */
-        System.out.println("\n----LambdaSample.functionalInterface----");
-        LambdaSample.functionalInterface();;
+        System.out.println("\n----Java7sample.omitDiamondOperator----");
+        Java7sample.omitDiamondOperator();
+
+        System.out.println("\n----Java7sample.catchSomeException----");
+        Java7sample.catchSomeException();
+
+        System.out.println("\n----Java7sample.detectReflectionError----");
+        Java7sample.detectReflectionError();
+
+        System.out.println("\n----Java7sample.stringSwitchStatement----");
+        Java7sample.stringSwitchStatement();
+
+        System.out.println("\n----Java7sample.underscoreNumber----");
+        Java7sample.underscoreNumber();
     }
 }
