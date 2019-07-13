@@ -1,5 +1,7 @@
 package sample;
 
+import sample.designpattern.builder.IceCream;
+import sample.designpattern.builder.StrawberryIceCream;
 import sample.java7newFunc.Java7sample;
 import sample.java8newFunc.Java8sample;
 import sample.java8newFunc.LambdaSample;
@@ -12,7 +14,18 @@ public class Main {
         callJava8Func();
         callThreadFunc();
         callLambdaFunc();
+        callBuilderPatternFunc();
     }
+
+    private static void callBuilderPatternFunc() {
+        /* Builder */
+        System.out.println("\n----BuilderPattern----");
+        IceCream.Builder builder = new StrawberryIceCream.Builder();
+        builder.addTopping(IceCream.Topping.CHOCOLATE).addTopping(IceCream.Topping.WHIPPEDCREAM);
+        IceCream ice = new StrawberryIceCream(builder);
+        System.out.println("Toppings are " + ice.taste());
+    }
+
 
     private static void callLambdaFunc() {
         /* Lambda */
