@@ -5,6 +5,7 @@ import sample.designpattern.builder.StrawberryIceCream;
 import sample.java7newFunc.Java7sample;
 import sample.java8newFunc.Java8sample;
 import sample.java8newFunc.LambdaSample;
+import sample.java8newFunc.OptionalSample;
 
 public class Main {
 
@@ -15,6 +16,13 @@ public class Main {
         callThreadFunc();
         callLambdaFunc();
         callBuilderPatternFunc();
+        callOptionalFunc();
+    }
+
+    private static void callOptionalFunc() {
+        System.out.println("\n----Optional Sample----");
+        OptionalSample sample = new OptionalSample();
+        sample.call();
     }
 
     private static void callBuilderPatternFunc() {

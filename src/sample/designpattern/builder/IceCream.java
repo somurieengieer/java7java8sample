@@ -16,7 +16,7 @@ public abstract class IceCream {
 
         public T addTopping(Topping topping) {
             toppings.add(topping);
-            return self();
+            return self(); // return this;にしたいが、thisにすると返り値を継承クラスにできない
         }
 
         protected abstract T self();
