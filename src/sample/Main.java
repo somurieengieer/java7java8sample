@@ -3,6 +3,7 @@ package sample;
 import sample.designpattern.builder.IceCream;
 import sample.designpattern.builder.StrawberryIceCream;
 import sample.java10newFunc.Java10sample;
+import sample.java11newFunc.Java11sample;
 import sample.java7newFunc.Java7sample;
 import sample.java8newFunc.Java8sample;
 import sample.java8newFunc.LambdaSample;
@@ -21,6 +22,19 @@ public class Main {
         callOptionalFunc();
         callJava9Func();
         callJava10Func();
+        callJava11Func();
+    }
+
+    private static void callJava11Func() {
+        /* Java11 */
+        System.out.println("\n----Java10sample.varSyntaxSugar----");
+        Java11sample.stringIsBlank();
+        System.out.println("\n----Java10sample.collectionToArray----");
+        Java11sample.collectionToArray();
+        System.out.println("\n----Java10sample.optionalIsEmpty----");
+        Java11sample.optionalIsEmpty();
+        System.out.println("\n----Java10sample.predicateNot----");
+        Java11sample.predicateNot();
     }
 
     private static void callJava10Func() {
@@ -31,7 +45,6 @@ public class Main {
         Java10sample.copyOf();
         System.out.println("\n----Java10sample.orElseThrow----");
         Java10sample.orElseThrow();
-
     }
 
     private static void callJava9Func() {
