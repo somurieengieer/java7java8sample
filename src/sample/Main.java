@@ -2,6 +2,7 @@ package sample;
 
 import sample.designpattern.builder.IceCream;
 import sample.designpattern.builder.StrawberryIceCream;
+import sample.java10newFunc.Java10sample;
 import sample.java7newFunc.Java7sample;
 import sample.java8newFunc.Java8sample;
 import sample.java8newFunc.LambdaSample;
@@ -19,6 +20,18 @@ public class Main {
         callBuilderPatternFunc();
         callOptionalFunc();
         callJava9Func();
+        callJava10Func();
+    }
+
+    private static void callJava10Func() {
+        /* Java10 */
+        System.out.println("\n----Java10sample.varSyntaxSugar----");
+        Java10sample.varSyntaxSugar();
+        System.out.println("\n----Java10sample.copyOf----");
+        Java10sample.copyOf();
+        System.out.println("\n----Java10sample.orElseThrow----");
+        Java10sample.orElseThrow();
+
     }
 
     private static void callJava9Func() {
