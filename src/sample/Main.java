@@ -6,6 +6,7 @@ import sample.java7newFunc.Java7sample;
 import sample.java8newFunc.Java8sample;
 import sample.java8newFunc.LambdaSample;
 import sample.java8newFunc.OptionalSample;
+import sample.java9newFunc.Java9sample;
 
 public class Main {
 
@@ -17,6 +18,27 @@ public class Main {
         callLambdaFunc();
         callBuilderPatternFunc();
         callOptionalFunc();
+        callJava9Func();
+    }
+
+    private static void callJava9Func() {
+        /* Java9 */
+        System.out.println("\n----Java9sample.stringChars----");
+        Java9sample.stringChars();
+        System.out.println("\n----Java9sample.sqrt----");
+        Java9sample.sqrt();
+        System.out.println("\n----Java9sample.ifPresentOrElse----");
+        Java9sample.ifPresentOrElse();
+        System.out.println("\n----Java9sample.streamNullFilter----");
+        Java9sample.streamNullFilter();
+        System.out.println("\n----Java9sample.optionOr----");
+        Java9sample.optionOr();
+        System.out.println("\n----Java9sample.listOf----");
+        Java9sample.listOf();
+        System.out.println("\n----Java9sample.streamTakeWhile----");
+        Java9sample.streamTakeWhile();
+        System.out.println("\n----Java9sample.streamDropWhile----");
+        Java9sample.streamDropWhile();
     }
 
     private static void callOptionalFunc() {
