@@ -4,6 +4,7 @@ import sample.designpattern.builder.IceCream;
 import sample.designpattern.builder.StrawberryIceCream;
 import sample.java10newFunc.Java10sample;
 import sample.java11newFunc.Java11sample;
+import sample.java12newFunc.Java12sample;
 import sample.java7newFunc.Java7sample;
 import sample.java8newFunc.Java8sample;
 import sample.java8newFunc.LambdaSample;
@@ -23,6 +24,18 @@ public class Main {
         callJava9Func();
         callJava10Func();
         callJava11Func();
+        callJava12Func();
+    }
+
+    private static void callJava12Func() {
+        /* Java12 */
+        System.out.println("\n----Java12sample.switchSyntax----");
+        System.out.println("----(注意)switch expressions はJava12ではまだ正式版ではなくプレビュー機能のようです。----");
+        Java12sample.switchSyntax();
+        System.out.println("\n----Java12sample.stringTransform----");
+        Java12sample.stringTransform();
+        System.out.println("\n----Java12sample.collectorsTeeing----");
+        Java12sample.collectorsTeeing();
     }
 
     private static void callJava11Func() {
