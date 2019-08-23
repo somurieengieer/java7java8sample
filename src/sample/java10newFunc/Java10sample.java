@@ -29,10 +29,10 @@ public class Java10sample {
         var list2 = List.copyOf(list);
         list2.stream().forEach(System.out::println);
 
-        // コピー先にaddしようとするのはNG。エラー
+        // コピー先はイミュータブル。addするとエラー
         // list2.add("test");
 
-        // コピー元にaddはできる
+        // コピー元にはもちろんaddはできる
         list.add("test");
         System.out.println("-- 追加した後のコピー元");
         list.stream().forEach(System.out::println);
