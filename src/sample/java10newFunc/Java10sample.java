@@ -7,7 +7,7 @@ import java.util.Optional;
 public class Java10sample {
 
     private static void thisIsNotCode() {
-        // GC Interfaceが作成されてGCのもジューラビリティが高くなった
+        // GC Interfaceが作成されてGCのモジューラビリティが高くなった
     }
 
     public static void varSyntaxSugar() {
