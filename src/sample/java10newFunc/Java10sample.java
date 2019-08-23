@@ -11,12 +11,16 @@ public class Java10sample {
     }
 
     public static void varSyntaxSugar() {
-        var list = new ArrayList<String>();
+        var list = new ArrayList<String>(); // listはArrayList<String>型になる
         list.add("aaa");
         list.add("bbb");
         list.stream().forEach(System.out::println);
         // ローカル変数にのみ使用可能。インスタンス変数は不可
-        // ラムダ引数には使えない
+        // ラムダ引数には使えないので注意
+
+        var i = 10;
+        var s = "aiueo";
+        // プリミティブ型にも使える
     }
 
     public static void copyOf() {
