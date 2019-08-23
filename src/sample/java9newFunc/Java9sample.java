@@ -1,10 +1,12 @@
 package sample.java9newFunc;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Java9sample {
@@ -43,14 +45,25 @@ public class Java9sample {
    }
 
    public static void streamNullFilter() {
-      List<String> searchList = List.of("aaa", "bbb", "ccc", "ddd");
+      List<String> searchList = new ArrayList<>(){
+         {
+            add("aaa");
+            add("ddd");
+            add(null);
+         }};
+      List<Optional<String>> optList = searchList.stream().map(s -> Optional.ofNullable(s)).collect(Collectors.toList());
+      optList.stream().flatMap(Optional::stream).forEach(System.out::println);
+      // flatMap(Optional::stream)を使うことで、楽にnullを排除できるようになった
+      // 以前は.filter(Optional::isPresent).map(Optional::get)と書かなければいけなかった
+
+      List<String> searchList2 = List.of("aaa", "bbb", "ccc", "ddd");
       Map<String, String> resultMap = new HashMap<>(){{
          put("aaa", "exist_a");
          put("ddd", "exist_b");
       }};
-      searchList.stream().flatMap(s -> Stream.ofNullable(resultMap.get(s)))
+      searchList2.stream().flatMap(s -> Stream.ofNullable(resultMap.get(s)))
               .forEach(s -> System.out.println(s));
-      // "bbb"と"ccc”に紐づく値は取得できないが、無視される
+      // このように"bbb"と"ccc”に紐づく値は取得できないためstreamから外すことができる
    }
 
    public static void optionOr() {
