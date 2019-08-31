@@ -40,13 +40,15 @@ public class Main {
 
     private static void callJava11Func() {
         /* Java11 */
-        System.out.println("\n----Java10sample.varSyntaxSugar----");
+        System.out.println("\n----Java11sample.stringLines----");
+        Java11sample.stringLines();
+        System.out.println("\n----Java11sample.varSyntaxSugar----");
         Java11sample.stringIsBlank();
-        System.out.println("\n----Java10sample.collectionToArray----");
+        System.out.println("\n----Java11sample.collectionToArray----");
         Java11sample.collectionToArray();
-        System.out.println("\n----Java10sample.optionalIsEmpty----");
+        System.out.println("\n----Java11sample.optionalIsEmpty----");
         Java11sample.optionalIsEmpty();
-        System.out.println("\n----Java10sample.predicateNot----");
+        System.out.println("\n----Java11sample.predicateNot----");
         Java11sample.predicateNot();
     }
 

@@ -24,22 +24,37 @@ public class Java10sample {
     }
 
     public static void copyOf() {
-        var list = new ArrayList<String>();
-        list.add("aaa");
+        class Person {
+            String name;
+            int age;
+            Person(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+        };
+        var list = new ArrayList<Person>();
+        list.add(new Person("personA", 1));
         var list2 = List.copyOf(list);
         list2.stream().forEach(System.out::println);
 
-        // コピー先はイミュータブル。addするとエラー
-        // list2.add("test");
+        // コピー元のListが参照している先のオブジェクトを変更するとコピー元も変更される
+        list.get(0).age = 100;
+        System.out.println("-- 年齢変更後のコピー元");
+        list.stream().forEach(p -> System.out.println(p.name + ", " + p.age));
+        System.out.println("-- 年齢変更後のコピー先");
+        list2.stream().forEach(p -> System.out.println(p.name + ", " + p.age));
+
+        // コピー先は追加削除は不可。addするとエラー
+        // list2.add(new Person("errorPerson", 2));
 
         // コピー元にはもちろんaddはできる
-        list.add("test");
+        list.add(new Person("personB", 2));
         System.out.println("-- 追加した後のコピー元");
-        list.stream().forEach(System.out::println);
+        list.stream().forEach(p -> System.out.println(p.name + ", " + p.age));
 
         // コピー先の値は変更されない
         System.out.println("-- 追加した後のコピー先");
-        list2.stream().forEach(System.out::println);
+        list2.stream().forEach(p -> System.out.println(p.name + ", " + p.age));
     }
 
     public static void orElseThrow() {
@@ -50,6 +65,7 @@ public class Java10sample {
             Optional<String> opt2 = Optional.ofNullable(null);
             System.out.println(opt2.orElseThrow());
         } catch (Exception e) {
+            System.out.println("exception class: " + e.getClass());
             System.out.println("nullのためthrowされる");
         }
     }

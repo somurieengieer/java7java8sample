@@ -12,24 +12,30 @@ public class Java11sample {
         // Javaモニタリング機能の追加（Flight Recorder）　※有償版では以前から存在していた
     }
 
+    public static void stringLines() {
+        String multiLines = "line1\nline2\nline3";
+        multiLines.lines().forEach(System.out::println);
+        // 改行で文字列を分割てStream<String>型で返します。
+    }
+
     public static void stringIsBlank() {
-        String strNull = "";
-        String strLenghth0 = "";
+        String strBlank = "";
         String strBlankChar = " ";
         String strJapaneseBlankChar = "　"; // 全角ブランク
-        if (strNull.isBlank() &&
-                strLenghth0.isBlank() &&
+
+        // isBlankでは""、" "、"　"の全てにおいてtrueを返す
+        if (strBlank.isBlank() &&
                 strBlankChar.isBlank() &&
                 strJapaneseBlankChar.isBlank()) {
             System.out.println("These are judged as Blank");
         }
 
-        if (strNull.isEmpty() &&
-                strLenghth0.isEmpty()) {
+        // isEmptyでは""のみtrueを返す
+        if (strBlank.isEmpty()) {
             System.out.println("These are judged as Empty");
         }
 
-        // isEmpty()の場合は "" と " " がfalseになる
+        // isEmptyでは""、" "の場合falseを返す
         if (!strBlankChar.isEmpty() &&
                 !strJapaneseBlankChar.isEmpty()) {
             System.out.println("These are NOT judged as Blank");
