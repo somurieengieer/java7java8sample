@@ -67,5 +67,6 @@ public class Java11sample {
     public static void predicateNot() {
         var list = List.of("aaa", "bbb", "", "ddd");
         list.stream().filter(Predicate.not(s -> s.isBlank())).forEach(System.out::println);
+        // filterによってブランクでない"aaa", "bbb", "ddd"に絞られます
     }
 }
