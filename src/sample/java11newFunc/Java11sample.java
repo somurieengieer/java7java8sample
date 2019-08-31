@@ -1,5 +1,10 @@
 package sample.java11newFunc;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -68,5 +73,23 @@ public class Java11sample {
         var list = List.of("aaa", "bbb", "", "ddd");
         list.stream().filter(Predicate.not(s -> s.isBlank())).forEach(System.out::println);
         // filterによってブランクでない"aaa", "bbb", "ddd"に絞られます
+    }
+
+    public static void http2() {
+
+        // クライアントを定義。プロキシ設定やhttpバージョンを指定できる。デフォルトでhttp2を使う
+        var client = HttpClient.newHttpClient();
+
+        // リクエストを定義。POSTパラメータやヘッダ設定などもここで行う
+        var request = HttpRequest.newBuilder(URI.create("https://www.google.com"))
+                .GET().build();
+        try {
+            var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.body().substring(0, 3000));
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -50,6 +50,8 @@ public class Main {
         Java11sample.optionalIsEmpty();
         System.out.println("\n----Java11sample.predicateNot----");
         Java11sample.predicateNot();
+        System.out.println("\n----Java11sample.http2----");
+        Java11sample.http2();
     }
 
     private static void callJava10Func() {
