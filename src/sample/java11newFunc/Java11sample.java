@@ -13,7 +13,7 @@ public class Java11sample {
     private static void thisIsNotCode() {
         // HTTP Client APIによるHTTP/2サポート
         // シングルJavaファイルからの即時実行（コンパイル不要）
-        // 新しいガベージコレクション方式（Java9からG1GCがデフォルトになっているが、低スペックマシンで動作する時はSerialG1が動くみたい）
+        // 新しいガベージコレクション方式ZGCの追加（Java9からG1GCがデフォルトになっているが、低スペックマシンで動作する時はSerialG1が動くみたい）
         // Javaモニタリング機能の追加（Flight Recorder）　※有償版では以前から存在していた
     }
 
