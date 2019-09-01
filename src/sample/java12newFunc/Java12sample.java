@@ -6,17 +6,18 @@ import java.util.stream.Collectors;
 
 public class Java12sample {
     public static void switchSyntax() {
-        System.out.println("--アロー構文");
+        System.out.println("-- アロー構文 --");
         int num = 4;
         switch(num) {
             case 1, 2, 3 -> System.out.println("複数条件を記述できます");
             case 4, 5, 6 -> {
-                System.out.println("ブロックによる記述もできます");
+                System.out.println("複数行の処理を書くときには");
+                System.out.println("ブロックで書きます");
             }
             default -> System.out.println("条件に合致しない場合");
         }
 
-        System.out.println("--switch式");
+        System.out.println("-- switch式 --");
         String message = switch (num) {
             case 1, 2, 3 -> "複数条件を記述できます";
             case 4, 5, 6 -> {
