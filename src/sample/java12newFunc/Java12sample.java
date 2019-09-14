@@ -37,14 +37,13 @@ public class Java12sample {
     }
 
     public static void collectorsTeeing() {
-        var list = List.of(12,532,21,2,4,5123,3,2,51,16,71,34,63,1,34,64,13);
-        var result = list.stream().collect(Collectors.groupingBy(i -> i%10));
+        var intList = List.of(12,32,21,13);
+        // 値の範囲を文字列で出力する
+        String result =
+        intList.stream().collect(Collectors.teeing(
+                Collectors.minBy(Integer::compareTo),
+                Collectors.maxBy(Integer::compareTo),
+                (min, max) -> min.get() + " ~ " + max.get()));
         System.out.println(result);
-        var result2 = list.stream().collect(Collectors.teeing(
-                Collectors.summingInt(i -> i),
-                Collectors.groupingBy(i -> i%10),
-                Map::entry));
-        System.out.println(result2);
-        // 合計値のキーに対して、1桁目でグルーピングされたMapを値に設定する
     }
 }
